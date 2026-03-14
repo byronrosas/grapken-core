@@ -1,0 +1,355 @@
+@import "tailwindcss";
+
+/* Prevent default drag behaviors globally */
+* {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* Allow text selection in inputs and textareas */
+input, textarea, [contenteditable="true"] {
+  -webkit-user-drag: auto;
+  user-drag: auto;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* Prevent ghost image when dragging */
+img, svg {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+/* Canvas drag cursor states */
+.cursor-grab {
+  cursor: grab !important;
+}
+
+.cursor-grabbing {
+  cursor: grabbing !important;
+}
+
+/* Prevent text selection during drag operations */
+.dragging * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+/* Markdown preview styles */
+.prose-invert h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #e5e5e5;
+}
+
+.prose-invert h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #e5e5e5;
+}
+
+.prose-invert h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #d4d4d4;
+}
+
+.prose-invert p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.prose-invert ul, .prose-invert ol {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-invert li {
+  margin-bottom: 0.25rem;
+}
+
+.prose-invert code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  font-size: 0.7rem;
+}
+
+.prose-invert pre {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  overflow-x: auto;
+  margin-bottom: 0.5rem;
+}
+
+.prose-invert pre code {
+  background: none;
+  padding: 0;
+}
+
+.prose-invert blockquote {
+  border-left: 2px solid #6366f1;
+  padding-left: 0.5rem;
+  margin-left: 0;
+  color: #a3a3a3;
+  font-style: italic;
+}
+
+.prose-invert a {
+  color: #818cf8;
+  text-decoration: underline;
+}
+
+.prose-invert a:hover {
+  color: #a5b4fc;
+}
+
+.prose-invert strong {
+  font-weight: 600;
+  color: #e5e5e5;
+}
+
+.prose-invert em {
+  font-style: italic;
+}
+
+.prose-invert hr {
+  border-color: #404040;
+  margin: 0.5rem 0;
+}
+
+/* Minimalist transparent scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ── Landing page ── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Landing page body ── */
+.landing-body {
+  --glow-violet: rgba(124, 58, 237, 0.15);
+  --glow-purple: rgba(139, 92, 246, 0.12);
+  --ink: #c4b5fd;
+  --page-bg: #04040e;
+}
+
+/* ── Keyframes ── */
+@keyframes landing-hero-glow {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.08); }
+}
+
+@keyframes landing-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes landing-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes landing-border-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes landing-pulse-ring {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes landing-grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -5%); }
+  30% { transform: translate(3%, -8%); }
+  50% { transform: translate(-4%, 3%); }
+  70% { transform: translate(2%, 6%); }
+  90% { transform: translate(-3%, 2%); }
+}
+
+@keyframes landing-spine-flow {
+  0% { transform: translateY(-160px); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes landing-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes landing-badge-border {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ── Typewriter caret blink ── */
+@keyframes landing-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Page turn / chapter reveal ── */
+@keyframes landing-page-turn {
+  0% { transform: perspective(1200px) rotateY(-90deg); opacity: 0; }
+  60% { transform: perspective(1200px) rotateY(6deg); opacity: 1; }
+  100% { transform: perspective(1200px) rotateY(0deg); opacity: 1; }
+}
+
+/* ── Ink spread ── */
+@keyframes landing-ink-spread {
+  0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+  100% { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+
+/* ── Particle float (for connection particles) ── */
+@keyframes landing-particle-drift {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  50% { transform: translate(var(--dx, 12px), var(--dy, -18px)) scale(1.3); opacity: 1; }
+  100% { transform: translate(var(--dx2, -8px), var(--dy2, 6px)) scale(0.8); opacity: 0.4; }
+}
+
+/* ── Count up ticker ── */
+@keyframes landing-count-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Stamp / seal drop ── */
+@keyframes landing-stamp {
+  0% { transform: scale(2.5) rotate(-12deg); opacity: 0; }
+  60% { transform: scale(0.95) rotate(1deg); opacity: 1; }
+  80% { transform: scale(1.02) rotate(-0.5deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* ── Chapter line grow ── */
+@keyframes landing-line-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ── Ripple hover ── */
+@keyframes landing-ripple {
+  0% { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* ── Book spine glow ── */
+@keyframes landing-spine-glow {
+  0%, 100% { box-shadow: 0 0 15px -3px rgba(124, 58, 237, 0.2); }
+  50% { box-shadow: 0 0 30px -3px rgba(124, 58, 237, 0.45); }
+}
+
+/* ── Node connection pulse ── */
+@keyframes landing-connection-flow {
+  0% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* ── Subtle magnetic float ── */
+@keyframes landing-magnetic {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(2px, -3px); }
+  50% { transform: translate(-1px, 2px); }
+  75% { transform: translate(3px, 1px); }
+}
+
+/* ── Scroll progress bar ── */
+.landing-scroll-progress {
+  transform-origin: left;
+  transition: transform 0.15s ease-out;
+}
+
+/* ── Interactive book page styles ── */
+.landing-book-page {
+  transform-origin: left center;
+  backface-visibility: hidden;
+}
+
+/* ── Typing cursor ── */
+.landing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--ink);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: landing-blink 1s step-end infinite;
+}
+
+/* ── Chapter marker ── */
+.landing-chapter-marker {
+  position: relative;
+}
+.landing-chapter-marker::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(124, 58, 237, 0.8);
+  box-shadow: 0 0 16px 4px rgba(124, 58, 237, 0.3);
+  transform: translateY(-50%);
+}
+
+/* ── Gamified badge ── */
+.landing-badge-pop {
+  animation: landing-stamp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Connection line hover ── */
+.landing-connection-line {
+  stroke-dasharray: 6 4;
+  animation: landing-connection-flow 1s linear infinite;
+}
+
+/* ── Card tilt on hover ── */
+.landing-tilt-card {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+}
+.landing-tilt-card:hover {
+  transform: perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
+  box-shadow: 0 20px 60px -15px rgba(124, 58, 237, 0.2), 0 0 0 1px rgba(124, 58, 237, 0.15);
+}
+
+
+
