@@ -185,11 +185,18 @@ export default function TermsPage() {
 
           {/* 8 */}
           <section>
-            <h2 className="text-base font-semibold text-neutral-200 mb-3">8. Pro Plan</h2>
+            <h2 className="text-base font-semibold text-neutral-200 mb-3">8. Open Source Core vs. Hosted Service</h2>
             <p className="mb-3">
-              When the Pro plan launches, additional terms governing subscriptions, billing,
-              cancellations, and refunds will be added to this document. Key principles we commit
-              to upfront:
+              <span className="text-neutral-200 font-medium">Grapken Core</span> is the open-source
+              application distributed under AGPL-3.0. It is free to use, self-host, and modify
+              under the terms of that license. These Terms govern your use of the hosted application
+              at <span className="text-violet-400">grapken.com</span>.
+            </p>
+            <p className="mb-3">
+              <span className="text-neutral-200 font-medium">Grapken Pro</span> is a separate
+              commercial hosted service currently in development. When it launches, additional
+              terms governing subscriptions, billing, cancellations, and refunds will apply
+              exclusively to that product. Key principles we commit to upfront:
             </p>
             <ul className="list-disc list-inside space-y-2 text-neutral-500 ml-2">
               <li>You can cancel your subscription at any time.</li>
@@ -202,10 +209,10 @@ export default function TermsPage() {
           <section>
             <h2 className="text-base font-semibold text-neutral-200 mb-3">9. Governing Law</h2>
             <p>
-              These Terms shall be governed by and construed in accordance with applicable law.
-              Any disputes shall be resolved through good-faith negotiation first. If unresolved,
-              disputes shall be submitted to the competent courts of the jurisdiction in which
-              Grapken operates.
+              These Terms shall be governed by and construed in accordance with the laws of
+              Ecuador, without regard to conflict of law principles. Any disputes shall be
+              resolved through good-faith negotiation first. If unresolved, disputes shall be
+              submitted to the competent courts of Ecuador.
             </p>
           </section>
 
@@ -235,6 +242,13 @@ export default function TermsPage() {
               The full license text is included in the repository at{" "}
               <code className="text-violet-400 bg-violet-500/10 px-1 rounded text-xs">LICENSE</code>.
               Nothing in these Terms restricts rights granted to you by the AGPL-3.0 license.
+            </p>
+            <p className="mb-3">
+              The copyright holder additionally operates a commercial hosted service
+              (Grapken Pro) under a separate commercial license. This dual-licensing model
+              is enabled by the Contributor License Agreement (Section 12) and is consistent
+              with the AGPL-3.0 license, which permits the copyright holder to also offer
+              the software under other terms.
             </p>
 
             <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-2 mt-6">11.2 Trademark</h3>
@@ -299,8 +313,8 @@ export default function TermsPage() {
 
         {/* Footer links */}
         <div className="mt-16 pt-8 border-t border-white/[0.04] flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
-          <span className="text-[10px] text-neutral-800 font-mono">© 2026 Grapken — v0.1.0 Beta</span>
-          <div className="flex items-center gap-5 text-[10px] font-mono text-neutral-700">
+          <span className="text-[10px] text-neutral-400 font-mono">© 2026 Grapken — v0.1.0 Beta</span>
+          <div className="flex items-center gap-5 text-[10px] font-mono text-neutral-400">
             <Link to="/privacy" className="hover:text-neutral-400 transition-colors">Privacy Policy</Link>
             <Link to="/landing" className="hover:text-neutral-400 transition-colors">← Back to site</Link>
           </div>
